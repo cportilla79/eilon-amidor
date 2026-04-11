@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Private Inquiry | Eilon Amidor Homes</title>
+  <meta name="description" content="Submit a confidential inquiry to Eilon Amidor Homes." />
+
+  <link rel="canonical" href="https://www.eilonamidorhomes.com/inquire.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
+        url('assets/img/hero-twilight.jpg') center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      padding: 40px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      background: rgba(20,20,20,0.8);
+      border: 1px solid #333;
+      color: #fff;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #eaeaea;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <a href="/" class="back">← Back</a>
+
+    <h1>Private Inquiry</h1>
+    <p>All inquiries are handled with discretion.</p>
+
+    <form id="inquiryForm" action="https://formspree.io/f/xlgoqola" method="POST">
+
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <label>
+        Full Name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+
+      <button type="submit">SUBMIT INQUIRY</button>
+
+    </form>
+
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('inquiryForm');
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const button = form.querySelector('button');
+        button.disabled = true;
+        button.innerText = "Submitting...";
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            window.location.href = "/";
+          } else {
+            alert("Something went wrong.");
+            button.disabled = false;
+            button.innerText = "SUBMIT INQUIRY";
+          }
+        } catch (error) {
+          alert("Network error.");
+          button.disabled = false;
+          button.innerText = "SUBMIT INQUIRY";
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

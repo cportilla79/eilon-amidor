@@ -3,252 +3,265 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eilon Amidor Homes | Coming Soon</title>
-  <meta name="description" content="Eilon Amidor Homes — Bespoke luxury residences in Westchester County. A new digital presence is coming soon." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Eilon Amidor Homes | Coming Soon" />
-  <meta property="og:description" content="Bespoke luxury residences in Westchester County. Coming soon." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
-  <meta property="og:url" content="https://www.eilonamidorhomes.com/" />
+
+  <title>Eilon Amidor Homes | Luxury Development Westchester</title>
+  <meta name="description" content="Eilon Amidor Homes — bespoke luxury residences in Westchester County, defined by craftsmanship, design, and timeless architecture." />
 
   <link rel="canonical" href="https://www.eilonamidorhomes.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#090b10;
-      --fg:#f4f0e8;
-      --muted:rgba(244,240,232,.78);
-      --line:rgba(255,255,255,.18);
-      --gold:#d8b277;
-      --overlay-top:rgba(6,8,14,.28);
-      --overlay-bottom:rgba(6,8,14,.68);
+    :root {
+      --bg: #0b0b0c;
+      --text: #f5f5f5;
+      --muted: #b8b8b8;
+      --accent: #d6b98c;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font-family:'Inter',sans-serif;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
     }
 
-    .hero{
-      position:relative;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      isolation:isolate;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
       background:
-        linear-gradient(180deg,var(--overlay-top) 0%, var(--overlay-bottom) 100%),
-        url("assets/img/hero-twilight.jpg") center center / cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+        url('assets/img/hero-twilight.jpg') center/cover no-repeat;
     }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,.04), transparent 38%),
-        linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.25));
-      z-index:0;
-      pointer-events:none;
+    .hero-content {
+      max-width: 700px;
     }
 
-    .wrap{
-      position:relative;
-      z-index:1;
-      width:min(900px, calc(100% - 48px));
-      text-align:center;
-      padding:48px 24px;
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      margin-bottom: 10px;
     }
 
-    .eyebrow{
-      margin:0 0 18px;
-      font-size:12px;
-      letter-spacing:.34em;
-      text-transform:uppercase;
-      color:rgba(244,240,232,.88);
+    .sub {
+      letter-spacing: 4px;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 30px;
     }
 
-    .brand{
-      margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(44px, 8vw, 92px);
-      line-height:.95;
-      letter-spacing:.01em;
-      font-weight:600;
-      text-shadow:0 10px 40px rgba(0,0,0,.35);
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-    .subbrand{
-      margin:8px 0 0;
-      font-size:12px;
-      letter-spacing:.38em;
-      text-transform:uppercase;
-      color:var(--gold);
+    .text {
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
 
-    .divider{
-      width:86px;
-      height:1px;
-      margin:28px auto 28px;
-      background:linear-gradient(90deg, transparent, var(--line), transparent);
+    .btn {
+      padding: 14px 28px;
+      border: 1px solid #fff;
+      text-decoration: none;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 2px;
+      transition: 0.3s;
     }
 
-    .headline{
-      margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(30px, 4vw, 54px);
-      line-height:1.03;
-      font-weight:500;
-      text-shadow:0 10px 30px rgba(0,0,0,.28);
+    .btn:hover {
+      background: #fff;
+      color: #000;
     }
 
-    .copy{
-      width:min(760px, 100%);
-      margin:22px auto 0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
+    /* SECTION */
+    section {
+      padding: 80px 0;
     }
 
-    .meta{
-      margin:30px auto 0;
-      font-size:12px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:rgba(244,240,232,.84);
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      margin-bottom: 20px;
     }
 
-    .actions{
-      margin-top:34px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
+    .section-text {
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 50px;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:220px;
-      padding:15px 24px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      text-decoration:none;
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      transition:.25s ease;
-      backdrop-filter:blur(8px);
+    /* PORTFOLIO GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    .btn-primary{
-      background:rgba(255,255,255,.92);
-      color:#0a0c11;
+    .card {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      cursor: pointer;
     }
 
-    .btn-primary:hover{
-      background:#fff;
-      transform:translateY(-1px);
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
     }
 
-    .btn-secondary{
-      background:rgba(12,14,20,.18);
-      color:var(--fg);
+    .card:hover img {
+      transform: scale(1.05);
     }
 
-    .btn-secondary:hover{
-      background:rgba(12,14,20,.3);
-      transform:translateY(-1px);
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
     }
 
-    .footer-note{
-      margin-top:32px;
-      font-size:13px;
-      color:rgba(244,240,232,.68);
+    .card-title {
+      font-size: 18px;
+      letter-spacing: 1px;
     }
 
-    .bottom-bar{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:1;
-      display:flex;
-      justify-content:center;
-      padding:18px 24px 22px;
-      background:linear-gradient(180deg, transparent, rgba(0,0,0,.28));
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 100px 0;
     }
 
-    .bottom-bar__inner{
-      width:min(1100px, 100%);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      color:rgba(244,240,232,.72);
-      font-size:11px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
+    .cta h2 {
+      font-size: 48px;
     }
 
-    @media (max-width: 700px){
-      .wrap{padding:36px 10px 90px}
-      .copy{font-size:15px; line-height:1.7}
-      .btn{min-width:100%}
-      .bottom-bar__inner{
-        flex-direction:column;
-        text-align:center;
-        gap:8px;
-      }
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 30px;
     }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #777;
+      font-size: 12px;
+    }
+
   </style>
 </head>
+
 <body>
-  <main class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Luxury Development • Westchester County</p>
 
-      <h1 class="brand">Eilon Amidor</h1>
-      <p class="subbrand">Homes</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="brand">Eilon Amidor</div>
+        <div class="sub">HOMES</div>
 
-      <div class="divider"></div>
+        <div class="headline">Estate-Caliber Living, Thoughtfully Built</div>
 
-      <h2 class="headline">A New Digital Presence<br>Is Coming Soon</h2>
+        <div class="text">
+          Bespoke luxury residences in Westchester County, defined by refined architecture,
+          superior craftsmanship, and a discreet, client-focused approach.
+        </div>
 
-      <p class="copy">
-        For more than 20 years, Eilon Amidor has redefined luxury living in Westchester County through
-        bespoke estate development, timeless architecture, and an unwavering commitment to craftsmanship.
-        A new online presence is now underway.
-      </p>
-
-      <p class="meta">Scarsdale • Larchmont • Westchester County</p>
-
-      <div class="actions">
-        <a class="btn btn-primary" href="inquire.html">Inquire Privately</a>
-        <a class="btn btn-secondary" href="https://www.instagram.com/eilonamidorhomes/" target="_blank" rel="noopener">@EilonAmidorHomes</a>
-      </div>
-
-      <p class="footer-note">Selected works and full portfolio launching soon.</p>
-    </div>
-
-    <div class="bottom-bar">
-      <div class="bottom-bar__inner">
-        <span>Bespoke Luxury Residences</span>
-        <span>eilonamidor.com • eilonamidorhomes.com</span>
+        <a href="inquire.html" class="btn">PRIVATE INQUIRY</a>
       </div>
     </div>
-  </main>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <section>
+    <div class="container">
+      <h2>Selected Residences</h2>
+      <div class="section-text">
+        A curated portfolio of custom-built homes reflecting a commitment to timeless design,
+        modern livability, and exceptional execution.
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <img src="assets/img/oxford.jpg" alt="">
+          <div class="card-overlay">
+            <div class="card-title">17 Oxford Road, Scarsdale</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/img/cooper2.jpg" alt="">
+          <div class="card-overlay">
+            <div class="card-title">2 Cooper Road, Scarsdale</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/img/hampton.jpg" alt="">
+          <div class="card-overlay">
+            <div class="card-title">41 Hampton Road, Scarsdale</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/img/spier.jpg" alt="">
+          <div class="card-overlay">
+            <div class="card-title">85 Spier Road, Scarsdale</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/img/cooper23.jpg" alt="">
+          <div class="card-overlay">
+            <div class="card-title">23 Cooper Road, Scarsdale</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="container">
+      <h2>The Builder</h2>
+
+      <div class="section-text">
+        For more than 15 years, Eilon Amidor has redefined luxury living in Westchester County.
+        Each residence reflects a meticulous attention to detail, curated materials, and a deep
+        understanding of both architecture and lifestyle.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="container">
+      <h2>Inquire Privately</h2>
+      <p>Opportunities and full portfolio details are available upon request.</p>
+      <a href="inquire.html" class="btn">SUBMIT INQUIRY</a>
+    </div>
+  </div>
+
+  <footer>
+    © Eilon Amidor Homes — Westchester County Luxury Development
+  </footer>
+
 </body>
 </html>

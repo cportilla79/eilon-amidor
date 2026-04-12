@@ -4,270 +4,767 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Eilon Amidor Homes | Luxury Development Westchester</title>
-  <meta name="description" content="Eilon Amidor Homes — bespoke luxury residences in Westchester County, defined by craftsmanship, design, and timeless architecture." />
-
+  <title>Eilon Amidor Homes | Bespoke Luxury Residences in Westchester County</title>
+  <meta name="description" content="Eilon Amidor Homes creates bespoke luxury residences in Westchester County, defined by architectural integrity, refined craftsmanship, and enduring design." />
   <link rel="canonical" href="https://www.eilonamidorhomes.com/" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Eilon Amidor Homes" />
+  <meta property="og:description" content="Bespoke luxury residences in Westchester County." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.eilonamidorhomes.com/" />
+  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0b0b0c;
-      --text: #f5f5f5;
-      --muted: #b8b8b8;
-      --accent: #d6b98c;
+    :root{
+      --bg:#07080b;
+      --bg-soft:#0e1014;
+      --panel:#12151b;
+      --text:#f1ede6;
+      --muted:rgba(241,237,230,.72);
+      --muted-2:rgba(241,237,230,.52);
+      --line:rgba(255,255,255,.10);
+      --line-soft:rgba(255,255,255,.06);
+      --accent:#c9a56a;
+      --max:1320px;
+      --radius:22px;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
     }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Manrope',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 48px));
+      margin:0 auto;
     }
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
+    .eyebrow{
+      margin:0 0 14px;
+      font-size:11px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+
+    .site-header{
+      position:absolute;
+      inset:0 0 auto 0;
+      z-index:30;
+      padding:26px 0;
+    }
+
+    .site-header__inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+
+    .brand__name{
+      font-family:'Cormorant Garamond',serif;
+      font-size:32px;
+      line-height:.9;
+      letter-spacing:.01em;
+    }
+
+    .brand__sub{
+      font-size:10px;
+      letter-spacing:.38em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.8);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.82);
+    }
+
+    .nav a:hover{color:#fff}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      transition:.25s ease;
+      font-size:11px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:rgba(255,255,255,.95);
+      color:#0b0d11;
+      box-shadow:0 14px 34px rgba(0,0,0,.28);
+    }
+
+    .btn-primary:hover{
+      background:#fff;
+      transform:translateY(-1px);
+    }
+
+    .btn-secondary{
+      color:#fff;
+      background:rgba(0,0,0,.18);
+      backdrop-filter:blur(8px);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.07);
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-        url('assets/img/hero-twilight.jpg') center/cover no-repeat;
+        linear-gradient(180deg, rgba(5,7,12,.20) 0%, rgba(5,7,12,.46) 48%, rgba(5,7,12,.78) 100%),
+        url("assets/img/hero-twilight.jpg") center center / cover no-repeat;
+      isolation:isolate;
     }
 
-    .hero-content {
-      max-width: 700px;
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 24% 24%, rgba(255,255,255,.08), transparent 28%),
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.28));
+      z-index:0;
+      pointer-events:none;
     }
 
-    .brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 72px;
-      margin-bottom: 10px;
+    .hero__content{
+      position:relative;
+      z-index:2;
+      width:min(900px, 100%);
+      padding:150px 0 72px;
     }
 
-    .sub {
-      letter-spacing: 4px;
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 30px;
+    .hero__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(60px, 10vw, 118px);
+      line-height:.92;
+      font-weight:600;
+      letter-spacing:.01em;
+      margin:0 0 12px;
+      max-width:780px;
     }
 
-    .headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      margin-bottom: 20px;
+    .hero__subtitle{
+      margin:0 0 26px;
+      font-size:12px;
+      letter-spacing:.36em;
+      text-transform:uppercase;
+      color:var(--accent);
     }
 
-    .text {
-      color: var(--muted);
-      margin-bottom: 40px;
-      line-height: 1.6;
+    .hero__headline{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(34px, 4.8vw, 62px);
+      line-height:1.02;
+      font-weight:500;
+      margin:0 0 18px;
+      max-width:820px;
     }
 
-    .btn {
-      padding: 14px 28px;
-      border: 1px solid #fff;
-      text-decoration: none;
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: 2px;
-      transition: 0.3s;
+    .hero__copy{
+      margin:0 0 34px;
+      max-width:650px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.9;
     }
 
-    .btn:hover {
-      background: #fff;
-      color: #000;
+    .hero__actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
     }
 
-    /* SECTION */
-    section {
-      padding: 80px 0;
+    .hero__scroll{
+      position:absolute;
+      right:0;
+      bottom:76px;
+      z-index:2;
+      color:rgba(241,237,230,.62);
+      font-size:11px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      transform:rotate(90deg) translateY(-14px);
+      transform-origin:right bottom;
     }
 
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      margin-bottom: 20px;
+    .section{
+      padding:110px 0;
     }
 
-    .section-text {
-      color: var(--muted);
-      max-width: 600px;
-      margin-bottom: 50px;
+    .section--border{
+      border-top:1px solid var(--line-soft);
+      border-bottom:1px solid var(--line-soft);
+      background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0));
     }
 
-    /* PORTFOLIO GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .intro{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:56px;
+      align-items:start;
     }
 
-    .card {
-      position: relative;
-      height: 320px;
-      overflow: hidden;
-      cursor: pointer;
+    .intro__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(38px, 5vw, 64px);
+      line-height:1.03;
+      margin:0;
+      max-width:720px;
     }
 
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+    .intro__copy{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.95;
+      max-width:620px;
     }
 
-    .card:hover img {
-      transform: scale(1.05);
+    .featured{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:34px;
+      align-items:stretch;
     }
 
-    .card-overlay {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    .featured__media{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:var(--panel);
+      border:1px solid var(--line);
+      min-height:640px;
+      box-shadow:var(--shadow);
     }
 
-    .card-title {
-      font-size: 18px;
-      letter-spacing: 1px;
+    .featured__media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
     }
 
-    /* CTA */
-    .cta {
-      text-align: center;
-      padding: 100px 0;
+    .featured__body{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:10px 0;
     }
 
-    .cta h2 {
-      font-size: 48px;
+    .featured__label{
+      margin:0 0 10px;
+      font-size:11px;
+      letter-spacing:.30em;
+      text-transform:uppercase;
+      color:var(--accent);
     }
 
-    .cta p {
-      color: var(--muted);
-      margin-bottom: 30px;
+    .featured__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(42px, 5vw, 68px);
+      line-height:1.01;
+      margin:0 0 12px;
     }
 
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      color: #777;
-      font-size: 12px;
+    .featured__meta{
+      margin:0 0 24px;
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.66);
     }
-	
-	.img-cooper {
-	  object-position: 20% center;
-	}
 
-	.img-spier { 
-	  object-position: 10% center; 
-	}
+    .featured__copy{
+      margin:0 0 28px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
+      max-width:520px;
+    }
+
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:28px;
+    }
+
+    .portfolio-card{
+      position:relative;
+      min-height:520px;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+
+    .portfolio-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .65s ease;
+    }
+
+    .portfolio-card:hover img{
+      transform:scale(1.03);
+    }
+
+    .portfolio-card__overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding:28px;
+      background:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.78));
+    }
+
+    .portfolio-card__kicker{
+      font-size:10px;
+      letter-spacing:.30em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.76);
+      margin:0 0 8px;
+    }
+
+    .portfolio-card__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:34px;
+      line-height:1;
+      margin:0 0 8px;
+    }
+
+    .portfolio-card__meta{
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .builder{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:50px;
+      align-items:start;
+    }
+
+    .builder__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(40px, 5vw, 62px);
+      line-height:1.03;
+      margin:0;
+      max-width:520px;
+    }
+
+    .builder__panel{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:var(--radius);
+      padding:36px 34px;
+    }
+
+    .builder__copy{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.95;
+      margin:0 0 24px;
+    }
+
+    .builder__list{
+      display:grid;
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .builder__item{
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.08);
+      font-size:15px;
+      color:rgba(241,237,230,.88);
+      line-height:1.7;
+    }
+
+    .opportunity{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:30px;
+      align-items:stretch;
+    }
+
+    .opportunity__media,
+    .opportunity__body{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+
+    .opportunity__media img{
+      width:100%;
+      height:100%;
+      min-height:520px;
+      object-fit:cover;
+    }
+
+    .opportunity__body{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:38px;
+    }
+
+    .opportunity__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(40px, 5vw, 62px);
+      line-height:1.02;
+      margin:4px 0 14px;
+    }
+
+    .opportunity__copy{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
+      margin:0 0 26px;
+    }
+
+    .cta{
+      padding:130px 0;
+      text-align:center;
+      border-top:1px solid var(--line-soft);
+      border-bottom:1px solid var(--line-soft);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .cta__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(42px, 5vw, 76px);
+      line-height:1.02;
+      margin:0 0 14px;
+    }
+
+    .cta__copy{
+      max-width:700px;
+      margin:0 auto 28px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
+    }
+
+    .site-footer{
+      padding:38px 0 54px;
+    }
+
+    .site-footer__inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      color:var(--muted-2);
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    /* Individual image control */
+    .img-oxford { object-position: 75% 46%; }
+    .img-cooper2 { object-position: 25% 44%; }
+    .img-griffen { object-position: 60% 42%; }
+    .img-spier { object-position: 10% 45%; }
+    .img-cooper23 { object-position: 10% 44%; }
+
+    @media (max-width: 1100px){
+      .intro,
+      .featured,
+      .builder,
+      .opportunity{
+        grid-template-columns:1fr;
+      }
+
+      .portfolio{
+        grid-template-columns:1fr;
+      }
+
+      .featured__media{
+        min-height:520px;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(100%, calc(100% - 28px));
+      }
+
+      .nav{
+        display:none;
+      }
+
+      .hero__content{
+        padding:130px 0 64px;
+      }
+
+      .hero__actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero__scroll{
+        display:none;
+      }
+
+      .portfolio-card{
+        min-height:380px;
+      }
+
+      .featured__media,
+      .opportunity__media img{
+        min-height:380px;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="brand">Eilon Amidor</div>
-        <div class="sub">HOMES</div>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="brand" aria-label="Eilon Amidor Homes Home">
+        <span class="brand__name">Eilon Amidor</span>
+        <span class="brand__sub">Homes</span>
+      </a>
 
-        <div class="headline">Estate-Caliber Living, Thoughtfully Built</div>
-
-        <div class="text">
-          Bespoke luxury residences in Westchester County, defined by refined architecture,
-          superior craftsmanship, and a discreet, client-focused approach.
-        </div>
-
-        <a href="inquire.html" class="btn">PRIVATE INQUIRY</a>
-      </div>
+	<nav class="nav" aria-label="Primary">
+	  <a href="#featured">Featured</a>
+	  <a href="portfolio.html">Portfolio</a>
+	  <a href="builder.html">The Builder</a>
+	  <a href="#opportunity">Opportunity</a>
+	  <a href="inquire.html">Inquiry</a>
+	</nav>
     </div>
-  </div>
+  </header>
 
-  <!-- PORTFOLIO -->
-  <section>
-    <div class="container">
-      <h2>Selected Residences</h2>
-      <div class="section-text">
-        A curated portfolio of custom-built homes reflecting a commitment to timeless design,
-        modern livability, and exceptional execution.
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <p class="eyebrow">Westchester County Luxury Development</p>
+          <h1 class="hero__title">Eilon Amidor</h1>
+          <p class="hero__subtitle">Homes</p>
+
+          <h2 class="hero__headline">Bespoke Residences of Enduring Distinction</h2>
+
+          <p class="hero__copy">
+            A portfolio of luxury homes defined by architectural restraint, refined craftsmanship,
+            and a standard of execution aligned with the most discerning clientele in Westchester County.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+            <a class="btn btn-secondary" href="inquire.html">Inquire Privately</a>
+          </div>
+        </div>
+
+        <div class="hero__scroll">Scroll</div>
       </div>
+    </section>
 
-      <div class="grid">
-
-        <div class="card">
-          <img src="assets/img/oxford.jpg" alt="">
-          <div class="card-overlay">
-            <div class="card-title">17 Oxford Road, Scarsdale</div>
-          </div>
+    <section class="section section--border">
+      <div class="container intro">
+        <div>
+          <p class="eyebrow">Brand Philosophy</p>
+          <h2 class="intro__title">
+            Homes of consequence are never improvised. They are composed with judgment, built with discipline, and meant to endure.
+          </h2>
         </div>
 
-        <div class="card">
-		  <img src="assets/img/cooper2.jpg" class="img-cooper" alt="">
-          <div class="card-overlay">
-            <div class="card-title">2 Cooper Road, Scarsdale</div>
-          </div>
+        <div>
+          <p class="intro__copy">
+            Eilon Amidor Homes creates bespoke residences for clients who value permanence, proportion, and an elevated standard of finish.
+            Each project is approached as a complete work of design — one in which architectural integrity, modern livability, and construction
+            quality are held to the same exacting standard.
+          </p>
         </div>
-
-        <div class="card">
-          <img src="assets/img/Griffen19.jpg" alt="">
-          <div class="card-overlay">
-            <div class="card-title">19 Griffen Ave, Scarsdale</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="assets/img/Griffen21.jpg" alt="">
-          <div class="card-overlay">
-            <div class="card-title">21 Griffen Ave, Scarsdale</div>
-          </div>
-        </div>
-
-        <div class="card">
-		  <img src="assets/img/spier.jpg" class="img-spier" alt="">
-          <div class="card-overlay">
-            <div class="card-title">85 Spier Road, Scarsdale</div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section>
-    <div class="container">
-      <h2>The Builder</h2>
+    <section class="section" id="featured">
+      <div class="container featured">
+        <div class="featured__media">
+          <img src="assets/img/oxford.jpg" alt="17 Oxford Road residence in Scarsdale" class="img-oxford">
+        </div>
 
-      <div class="section-text">
-        For more than 15 years, Eilon Amidor has redefined luxury living in Westchester County.
-        Each residence reflects a meticulous attention to detail, curated materials, and a deep
-        understanding of both architecture and lifestyle.
+        <div class="featured__body">
+          <p class="featured__label">Featured Residence</p>
+          <h2 class="featured__title">17 Oxford Road</h2>
+          <p class="featured__meta">Scarsdale, New York</p>
+
+          <p class="featured__copy">
+            A residence that reflects the core sensibility of the brand: strong massing, timeless architectural character,
+            modern family living, and a level of finish designed to feel composed rather than overstated.
+          </p>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="portfolio.html">Explore Portfolio</a>
+            <a class="btn btn-secondary" href="inquire.html">Request Details</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <div class="cta">
-    <div class="container">
-      <h2>Inquire Privately</h2>
-      <p>Opportunities and full portfolio details are available upon request.</p>
-      <a href="inquire.html" class="btn">SUBMIT INQUIRY</a>
-    </div>
-  </div>
+    <section class="section section--border" id="portfolio">
+      <div class="container">
+        <div class="intro" style="margin-bottom:42px;">
+          <div>
+            <p class="eyebrow">Selected Residences</p>
+            <h2 class="intro__title">A Portfolio Built on Restraint, Scale, and Execution</h2>
+          </div>
 
-  <footer>
-    © Eilon Amidor Homes — Westchester County Luxury Development
+          <div>
+            <p class="intro__copy">
+              The work reflects a clear point of view: homes that feel substantial without excess, elevated without performance,
+              and custom in the truest sense of the word.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio">
+          <article class="portfolio-card">
+            <img src="assets/img/cooper2.jpg" alt="2 Cooper Road residence in Scarsdale" class="img-cooper2">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed Residence</p>
+                <h3 class="portfolio-card__title">2 Cooper Road</h3>
+                <p class="portfolio-card__meta">Scarsdale, New York</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img src="assets/img/Griffen21.jpg" alt="21 Griffen Ave residence in Scarsdale" class="img-griffen">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed Residence</p>
+                <h3 class="portfolio-card__title">21 Griffen Ave</h3>
+                <p class="portfolio-card__meta">Scarsdale, New York</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img src="assets/img/spier.jpg" alt="85 Spier Road residence in Scarsdale" class="img-spier">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed Residence</p>
+                <h3 class="portfolio-card__title">85 Spier Road</h3>
+                <p class="portfolio-card__meta">Scarsdale, New York</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img src="assets/img/cooper23.jpg" alt="23 Cooper Road residence in Scarsdale" class="img-cooper23">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed Residence</p>
+                <h3 class="portfolio-card__title">23 Cooper Road</h3>
+                <p class="portfolio-card__meta">Scarsdale, New York</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="builder">
+      <div class="container builder">
+        <div>
+          <p class="eyebrow">The Builder</p>
+          <h2 class="builder__title">A Disciplined Approach to Luxury Development</h2>
+        </div>
+
+        <div class="builder__panel">
+          <p class="builder__copy">
+            For more than 15 years, Eilon Amidor has developed luxury residences throughout Westchester County with a focus on quality,
+            discretion, and architectural permanence. His work is guided by the belief that exceptional homes are not defined by excess,
+            but by judgment — in scale, in materials, in proportion, and in execution.
+          </p>
+
+          <p class="builder__copy">
+            The result is a body of work that serves a discerning clientele seeking homes that feel deeply considered, highly functional,
+            and built to hold their value over time.
+          </p>
+
+          <div class="builder__list">
+            <div class="builder__item">Custom single-family residences shaped by timeless architecture and modern livability</div>
+            <div class="builder__item">A detail-driven construction process with an emphasis on finish quality and architectural integrity</div>
+            <div class="builder__item">A discreet, highly controlled experience suited to the expectations of the ultra-luxury market</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="cta">
+      <div class="container">
+        <p class="eyebrow">Private Access</p>
+        <h2 class="cta__title">Engage the Brand Privately</h2>
+        <p class="cta__copy">
+          Portfolio details, current opportunities, and future development conversations are shared discreetly.
+          All inquiries are handled with care and confidentiality.
+        </p>
+        <a class="btn btn-primary" href="inquire.html">Submit Inquiry</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© Eilon Amidor Homes</span>
+      <span>Scarsdale • Larchmont • Westchester County</span>
+    </div>
   </footer>
 
 </body>

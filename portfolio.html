@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Portfolio | Eilon Amidor Homes</title>
+  <meta name="description" content="A curated portfolio of bespoke luxury residences by Eilon Amidor Homes in Westchester County." />
+  <link rel="canonical" href="https://www.eilonamidorhomes.com/portfolio.html" />
+
+  <meta property="og:title" content="Portfolio | Eilon Amidor Homes" />
+  <meta property="og:description" content="A curated portfolio of luxury residences in Westchester County." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.eilonamidorhomes.com/portfolio.html" />
+  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/oxford.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07080b;
+      --bg-soft:#0e1014;
+      --panel:#12151b;
+      --text:#f1ede6;
+      --muted:rgba(241,237,230,.72);
+      --muted-2:rgba(241,237,230,.52);
+      --line:rgba(255,255,255,.10);
+      --line-soft:rgba(255,255,255,.06);
+      --accent:#c9a56a;
+      --max:1320px;
+      --radius:22px;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Manrope',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      margin:0 0 14px;
+      font-size:11px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+
+    .site-header{
+      padding:26px 0;
+      border-bottom:1px solid var(--line-soft);
+      background:rgba(7,8,11,.94);
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(10px);
+    }
+
+    .site-header__inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+
+    .brand__name{
+      font-family:'Cormorant Garamond',serif;
+      font-size:32px;
+      line-height:.9;
+    }
+
+    .brand__sub{
+      font-size:10px;
+      letter-spacing:.38em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.8);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.82);
+    }
+
+    .nav a:hover,.nav a.active{color:#fff}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      transition:.25s ease;
+      font-size:11px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:rgba(255,255,255,.95);
+      color:#0b0d11;
+    }
+
+    .btn-primary:hover{background:#fff;transform:translateY(-1px)}
+
+    .page-hero{
+      padding:84px 0 42px;
+      background:linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0));
+    }
+
+    .page-hero__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(52px, 8vw, 94px);
+      line-height:.95;
+      margin:0 0 14px;
+      max-width:860px;
+    }
+
+    .page-hero__copy{
+      max-width:700px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    .section{
+      padding:56px 0 100px;
+    }
+
+    .project{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:stretch;
+      margin-bottom:34px;
+    }
+
+    .project:nth-child(even){
+      grid-template-columns:.95fr 1.05fr;
+    }
+
+    .project__media{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--panel);
+      min-height:620px;
+      box-shadow:var(--shadow);
+    }
+
+    .project__media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .project__body{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      padding:42px 38px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .project__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(40px, 5vw, 66px);
+      line-height:1.02;
+      margin:0 0 8px;
+    }
+
+    .project__meta{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.6);
+      margin:0 0 20px;
+    }
+
+    .project__copy{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
+      margin:0 0 24px;
+    }
+
+    .project__tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .tag{
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      color:rgba(241,237,230,.78);
+    }
+
+    .cta{
+      padding:120px 0;
+      text-align:center;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .cta__title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(42px, 5vw, 74px);
+      margin:0 0 12px;
+    }
+
+    .cta__copy{
+      max-width:680px;
+      margin:0 auto 28px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.85;
+    }
+
+    .site-footer{
+      padding:38px 0 54px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .site-footer__inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      color:var(--muted-2);
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    .img-oxford { object-position: 50% 46%; }
+    .img-cooper2 { object-position: 22% 44%; }
+    .img-griffen { object-position: 55% 42%; }
+    .img-spier { object-position: 10% 45%; }
+    .img-cooper23 { object-position: 13% 44%; }
+
+    @media (max-width: 1020px){
+      .project,.project:nth-child(even){grid-template-columns:1fr}
+      .project__media{min-height:420px}
+    }
+
+    @media (max-width: 760px){
+      .container{width:min(100%, calc(100% - 28px))}
+      .nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="brand" aria-label="Eilon Amidor Homes Home">
+        <span class="brand__name">Eilon Amidor</span>
+        <span class="brand__sub">Homes</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="builder.html">The Builder</a>
+        <a href="inquire.html">Inquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="page-hero__title">A Curated Body of Work Defined by Permanence, Proportion, and Restraint</h1>
+        <p class="page-hero__copy">
+          The portfolio reflects a clear architectural point of view: homes with presence, discipline, and a standard
+          of finish intended to endure well beyond first impression.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <article class="project">
+          <div class="project__media">
+            <img src="assets/img/oxford.jpg" alt="17 Oxford Road residence in Scarsdale" class="img-oxford">
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">Completed Residence</p>
+            <h2 class="project__title">17 Oxford Road</h2>
+            <p class="project__meta">Scarsdale, New York</p>
+            <p class="project__copy">
+              A residence that expresses the core language of the brand: timeless exterior character,
+              disciplined proportions, and interiors designed for both elegance and livability.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Custom Residence</span>
+              <span class="tag">Scarsdale</span>
+              <span class="tag">Completed</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__body">
+            <p class="eyebrow">Completed Residence</p>
+            <h2 class="project__title">2 Cooper Road</h2>
+            <p class="project__meta">Scarsdale, New York</p>
+            <p class="project__copy">
+              A home conceived with a strong sense of architectural permanence, balancing refined detail
+              with modern spatial flow and a calm, elevated material palette.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Estate Scale</span>
+              <span class="tag">Scarsdale</span>
+              <span class="tag">Completed</span>
+            </div>
+          </div>
+          <div class="project__media">
+            <img src="assets/img/cooper2.jpg" alt="2 Cooper Road residence in Scarsdale" class="img-cooper2">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__media">
+            <img src="assets/img/Griffen21.jpg" alt="21 Griffen Ave residence in Scarsdale" class="img-griffen">
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">Completed Residence</p>
+            <h2 class="project__title">21 Griffen Ave</h2>
+            <p class="project__meta">Scarsdale, New York</p>
+            <p class="project__copy">
+              A carefully resolved residence shaped by proportion, natural light, and a level of execution
+              intended to feel quietly expensive rather than over-assertive.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Refined Interiors</span>
+              <span class="tag">Custom Build</span>
+              <span class="tag">Completed</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__body">
+            <p class="eyebrow">Completed Residence</p>
+            <h2 class="project__title">85 Spier Road</h2>
+            <p class="project__meta">Scarsdale, New York</p>
+            <p class="project__copy">
+              A residence that reinforces the studio’s broader approach: measured scale, timeless materials,
+              and a disciplined standard of finish across every visible and invisible detail.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Architectural Presence</span>
+              <span class="tag">Scarsdale</span>
+              <span class="tag">Completed</span>
+            </div>
+          </div>
+          <div class="project__media">
+            <img src="assets/img/spier.jpg" alt="85 Spier Road residence in Scarsdale" class="img-spier">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__media">
+            <img src="assets/img/cooper23.jpg" alt="23 Cooper Road residence in Scarsdale" class="img-cooper23">
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">Completed Residence</p>
+            <h2 class="project__title">23 Cooper Road</h2>
+            <p class="project__meta">Scarsdale, New York</p>
+            <p class="project__copy">
+              Another expression of the same design discipline — one in which craftsmanship, restraint, and
+              modern livability are treated not as features, but as the baseline expectation.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Luxury Residence</span>
+              <span class="tag">Westchester County</span>
+              <span class="tag">Completed</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <p class="eyebrow">Private Access</p>
+        <h2 class="cta__title">Request Portfolio Details</h2>
+        <p class="cta__copy">
+          Full portfolio materials and current development conversations are shared discreetly upon inquiry.
+        </p>
+        <a class="btn btn-primary" href="inquire.html">Submit Inquiry</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© Eilon Amidor Homes</span>
+      <span>Scarsdale • Larchmont • Westchester County</span>
+    </div>
+  </footer>
+</body>
+</html>

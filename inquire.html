@@ -6,129 +6,247 @@
 
   <title>Private Inquiry | Eilon Amidor Homes</title>
   <meta name="description" content="Submit a confidential inquiry to Eilon Amidor Homes." />
-
   <link rel="canonical" href="https://www.eilonamidorhomes.com/inquire.html" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Private Inquiry | Eilon Amidor Homes" />
+  <meta property="og:description" content="Submit a confidential inquiry to Eilon Amidor Homes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.eilonamidorhomes.com/inquire.html" />
+  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-      min-height: 100vh;
+    :root{
+      --text:#f1ede6;
+      --muted:rgba(241,237,230,.74);
+      --line:rgba(255,255,255,.12);
+      --accent:#c9a56a;
+    }
 
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:'Manrope',sans-serif;
+      min-height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
-        url('assets/img/hero-twilight.jpg') center/cover no-repeat;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        linear-gradient(180deg, rgba(6,8,12,.42), rgba(6,8,12,.78)),
+        url("assets/img/hero-twilight.jpg") center center / cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    .container {
-      width: 100%;
-      max-width: 520px;
-      padding: 40px;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
+    a{text-decoration:none;color:inherit}
+
+    .shell{
+      width:min(1120px, calc(100% - 40px));
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:34px;
+      align-items:stretch;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #ccc;
-      text-decoration: none;
-      font-size: 12px;
+    .intro,
+    .form-wrap{
+      border:1px solid var(--line);
+      background:rgba(8,10,14,.44);
+      backdrop-filter:blur(12px);
+      border-radius:22px;
+      overflow:hidden;
     }
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      margin-bottom: 10px;
+    .intro{
+      padding:42px 36px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
-    p {
-      color: #bbb;
-      margin-bottom: 25px;
+    .eyebrow{
+      margin:0 0 14px;
+      font-size:11px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:var(--accent);
     }
 
-    label {
-      display: block;
-      margin-bottom: 15px;
-      font-size: 13px;
+    .title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(44px, 5vw, 72px);
+      line-height:.96;
+      margin:0 0 14px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      background: rgba(20,20,20,0.8);
-      border: 1px solid #333;
-      color: #fff;
+    .copy{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.9;
     }
 
-    textarea {
-      resize: none;
+    .meta{
+      margin-top:24px;
+      display:grid;
+      gap:12px;
+      color:rgba(241,237,230,.82);
+      font-size:13px;
+      line-height:1.7;
     }
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 20px;
-      background: #fff;
-      color: #000;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 2px;
-      transition: 0.3s;
+    .back{
+      display:inline-block;
+      margin-top:26px;
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.74);
     }
 
-    button:hover {
-      background: #eaeaea;
+    .back:hover{color:#fff}
+
+    .form-wrap{
+      padding:36px 34px;
     }
 
-    button:disabled {
-      opacity: 0.6;
+    form{
+      display:grid;
+      gap:16px;
+    }
+
+    label{
+      display:grid;
+      gap:8px;
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(241,237,230,.82);
+    }
+
+    input, textarea, select{
+      width:100%;
+      padding:14px 14px;
+      background:rgba(18,21,27,.82);
+      border:1px solid rgba(255,255,255,.10);
+      color:#fff;
+      font:inherit;
+      border-radius:14px;
+      outline:none;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      border-color:rgba(201,165,106,.55);
+    }
+
+    textarea{resize:none}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      padding:15px 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      font-size:11px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      white-space:nowrap;
+      background:rgba(255,255,255,.95);
+      color:#0b0d11;
+      cursor:pointer;
+      transition:.25s ease;
+      margin-top:6px;
+    }
+
+    .btn:hover{background:#fff;transform:translateY(-1px)}
+    .btn:disabled{opacity:.6;cursor:not-allowed}
+
+    .fine{
+      margin:8px 0 0;
+      color:rgba(241,237,230,.58);
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    @media (max-width: 920px){
+      .shell{grid-template-columns:1fr}
     }
   </style>
 </head>
-
 <body>
+  <div class="shell">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Private Inquiry</p>
+        <h1 class="title">Engage the Brand Discreetly</h1>
+        <p class="copy">
+          Portfolio details, current opportunities, and development conversations are shared privately.
+          All inquiries are handled with care and confidentiality.
+        </p>
+        <p class="copy">
+          If relevant, please include your timing, area of interest, or the nature of your inquiry.
+        </p>
+      </div>
 
-  <div class="container">
+      <div>
+        <div class="meta">
+          <div>Portfolio materials available upon request</div>
+          <div>Current opportunities discussed privately</div>
+          <div>Westchester County luxury development</div>
+        </div>
 
-    <a href="/" class="back">← Back</a>
+        <a class="back" href="/">← Return to Home</a>
+      </div>
+    </div>
 
-    <h1>Private Inquiry</h1>
-    <p>All inquiries are handled with discretion.</p>
+    <div class="form-wrap">
+      <form id="inquiryForm" action="https://formspree.io/f/xlgoqola" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-    <form id="inquiryForm" action="https://formspree.io/f/xlgoqola" method="POST">
+        <label>
+          Full Name
+          <input type="text" name="name" required>
+        </label>
 
-      <!-- Honeypot -->
-      <input type="text" name="_gotcha" style="display:none">
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
 
-      <label>
-        Full Name
-        <input type="text" name="name" required>
-      </label>
+        <label>
+          Phone
+          <input type="tel" name="phone">
+        </label>
 
-      <label>
-        Email
-        <input type="email" name="email" required>
-      </label>
+        <label>
+          Nature of Inquiry
+          <select name="inquiry_type" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Portfolio Request</option>
+            <option>Current Opportunity</option>
+            <option>Development Conversation</option>
+            <option>General Inquiry</option>
+          </select>
+        </label>
 
-      <label>
-        Message
-        <textarea name="message" rows="4" required></textarea>
-      </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
 
-      <button type="submit">SUBMIT INQUIRY</button>
+        <button class="btn" type="submit">Submit Inquiry</button>
 
-    </form>
-
+        <p class="fine">
+          By submitting, you understand that follow-up may be conducted privately and selectively.
+        </p>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -139,9 +257,11 @@
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const button = form.querySelector('button');
-        button.disabled = true;
-        button.innerText = "Submitting...";
+        const button = form.querySelector('button[type="submit"]');
+        if (button) {
+          button.disabled = true;
+          button.textContent = 'Submitting...';
+        }
 
         const formData = new FormData(form);
 
@@ -149,26 +269,27 @@
           const response = await fetch(form.action, {
             method: 'POST',
             body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
           });
 
           if (response.ok) {
-            window.location.href = "/";
+            window.location.href = '/';
           } else {
-            alert("Something went wrong.");
-            button.disabled = false;
-            button.innerText = "SUBMIT INQUIRY";
+            alert('Something went wrong. Please try again.');
+            if (button) {
+              button.disabled = false;
+              button.textContent = 'Submit Inquiry';
+            }
           }
         } catch (error) {
-          alert("Network error.");
-          button.disabled = false;
-          button.innerText = "SUBMIT INQUIRY";
+          alert('Network error. Please try again.');
+          if (button) {
+            button.disabled = false;
+            button.textContent = 'Submit Inquiry';
+          }
         }
       });
     })();
   </script>
-
 </body>
 </html>

@@ -4,15 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Private Inquiry | Eilon Amidor Homes</title>
-  <meta name="description" content="Submit a confidential inquiry to Eilon Amidor Homes." />
+  <title>Contact a Luxury Home Builder in Scarsdale & Westchester County | Eilon Amidor Homes</title>
+  <meta name="description" content="Submit a private inquiry to Eilon Amidor Homes — Westchester County's premier luxury new construction builder. Custom estates in Scarsdale and Larchmont Manor, NY." />
   <link rel="canonical" href="https://www.eilonamidorhomes.com/inquire.html" />
-
-  <meta property="og:title" content="Private Inquiry | Eilon Amidor Homes" />
-  <meta property="og:description" content="Submit a confidential inquiry to Eilon Amidor Homes." />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="US-NY" />
+  <meta property="og:title" content="Contact | Luxury Home Builder Scarsdale & Westchester County | Eilon Amidor Homes" />
+  <meta property="og:description" content="Private inquiry to Eilon Amidor Homes. Custom luxury new construction homes in Scarsdale and Larchmont Manor, Westchester County NY." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.eilonamidorhomes.com/inquire.html" />
   <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307080b'/><text x='50%' y='54%' font-family='Georgia,serif' font-size='13' fill='%23c9a56a' text-anchor='middle' dominant-baseline='middle' letter-spacing='1'>EA</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,7 @@
     :root{
       --text:#f1ede6;
       --muted:rgba(241,237,230,.74);
+      --muted-2:rgba(241,237,230,.52);
       --line:rgba(255,255,255,.12);
       --accent:#c9a56a;
     }
@@ -36,8 +40,10 @@
         linear-gradient(180deg, rgba(6,8,12,.42), rgba(6,8,12,.78)),
         url("assets/img/hero-twilight.jpg") center center / cover no-repeat;
       display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
+      padding:32px 20px;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
@@ -45,7 +51,7 @@
     a{text-decoration:none;color:inherit}
 
     .shell{
-      width:min(1120px, calc(100% - 40px));
+      width:min(1120px, 100%);
       display:grid;
       grid-template-columns:.9fr 1.1fr;
       gap:34px;
@@ -100,23 +106,21 @@
     }
 
     .back{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
       margin-top:26px;
       font-size:11px;
       letter-spacing:.22em;
       text-transform:uppercase;
       color:rgba(241,237,230,.74);
+      transition:color .2s ease;
     }
 
     .back:hover{color:#fff}
 
     .form-wrap{
       padding:36px 34px;
-    }
-
-    form{
-      display:grid;
-      gap:16px;
     }
 
     label{
@@ -143,7 +147,18 @@
       border-color:rgba(201,165,106,.55);
     }
 
+    /* Fix select option appearance */
+    select option{
+      background:#12151b;
+      color:#fff;
+    }
+
     textarea{resize:none}
+
+    .form-fields{
+      display:grid;
+      gap:16px;
+    }
 
     .btn{
       display:inline-flex;
@@ -165,7 +180,7 @@
     }
 
     .btn:hover{background:#fff;transform:translateY(-1px)}
-    .btn:disabled{opacity:.6;cursor:not-allowed}
+    .btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 
     .fine{
       margin:8px 0 0;
@@ -174,8 +189,23 @@
       line-height:1.7;
     }
 
+    .page-footer{
+      margin-top:24px;
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--muted-2);
+      text-align:center;
+    }
+
     @media (max-width: 920px){
       .shell{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 600px){
+      body{padding:20px 16px}
+      .intro{padding:30px 24px}
+      .form-wrap{padding:28px 24px}
     }
   </style>
 </head>
@@ -209,45 +239,49 @@
       <form id="inquiryForm" action="https://formspree.io/f/xlgoqola" method="POST">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-        <label>
-          Full Name
-          <input type="text" name="name" required>
-        </label>
+        <div class="form-fields">
+          <label>
+            Full Name
+            <input type="text" name="name" required autocomplete="name">
+          </label>
 
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email">
+          </label>
 
-        <label>
-          Phone
-          <input type="tel" name="phone">
-        </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel">
+          </label>
 
-        <label>
-          Nature of Inquiry
-          <select name="inquiry_type" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Portfolio Request</option>
-            <option>Current Opportunity</option>
-            <option>Development Conversation</option>
-            <option>General Inquiry</option>
-          </select>
-        </label>
+          <label>
+            Nature of Inquiry
+            <select name="inquiry_type" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Portfolio Request</option>
+              <option>Current Opportunity</option>
+              <option>Development Conversation</option>
+              <option>General Inquiry</option>
+            </select>
+          </label>
 
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
 
-        <button class="btn" type="submit">Submit Inquiry</button>
+          <button class="btn" type="submit">Submit Inquiry</button>
 
-        <p class="fine">
-          By submitting, you understand that follow-up may be conducted privately and selectively.
-        </p>
+          <p class="fine">
+            By submitting, you understand that follow-up may be conducted privately and selectively.
+          </p>
+        </div>
       </form>
     </div>
   </div>
+
+  <p class="page-footer">© 2025 Eilon Amidor Homes &nbsp;·&nbsp; Scarsdale · Larchmont · Westchester County</p>
 
   <script>
     (function () {
@@ -260,7 +294,7 @@
         const button = form.querySelector('button[type="submit"]');
         if (button) {
           button.disabled = true;
-          button.textContent = 'Submitting...';
+          button.textContent = 'Submitting…';
         }
 
         const formData = new FormData(form);

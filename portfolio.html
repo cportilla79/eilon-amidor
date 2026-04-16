@@ -16,6 +16,16 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eilonamidorhomes.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.eilonamidorhomes.com/portfolio.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Luxury New Construction Homes — Eilon Amidor Homes Portfolio",
     "description": "Custom luxury new construction homes in Scarsdale and Larchmont Manor, Westchester County NY",
@@ -44,51 +54,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
   <style>
-    :root{
-      --bg:#07080b; --bg-soft:#0e1014; --panel:#12151b;
-      --text:#f1ede6; --muted:rgba(241,237,230,.72); --muted-2:rgba(241,237,230,.52);
-      --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
-      --accent:#c9a56a; --max:1320px; --radius:22px; --shadow:0 24px 70px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    body{ margin:0; background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
-    .container{ width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
-    .eyebrow{ margin:0 0 14px; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--accent); }
-
-    /* ── Header ── */
+    /* ── Header (sticky) ── */
     .site-header{ padding:26px 0; border-bottom:1px solid var(--line-soft); background:rgba(7,8,11,.94); position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); }
     .site-header__inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand{ display:flex; flex-direction:column; gap:3px; position:relative; z-index:40; }
-    .brand__name{ font-family:'Cormorant Garamond',serif; font-size:32px; line-height:.9; }
-    .brand__sub{ font-size:10px; letter-spacing:.38em; text-transform:uppercase; color:rgba(241,237,230,.8); }
-    .nav{ display:flex; align-items:center; gap:26px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(241,237,230,.82); }
-    .nav a:hover,.nav a.active{color:#fff}
-
-    /* ── Hamburger ── */
-    .nav-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; position:relative; z-index:40; }
-    .nav-toggle span{ display:block; width:24px; height:1.5px; background:var(--text); transition:transform .3s ease, opacity .3s ease; }
-    .nav-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-    .nav-toggle.active span:nth-child(2){opacity:0}
-    .nav-toggle.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-    /* ── Mobile overlay ── */
-    .nav-overlay{ position:fixed; inset:0; background:rgba(7,8,11,.97); backdrop-filter:blur(14px); z-index:29; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; opacity:0; pointer-events:none; transition:opacity .35s ease; }
-    .nav-overlay.open{ opacity:1; pointer-events:all; }
-    .nav-overlay__link{ font-family:'Cormorant Garamond',serif; font-size:clamp(38px,10vw,54px); color:var(--text); letter-spacing:.04em; line-height:1.2; opacity:0; transform:translateY(12px); transition:color .2s, opacity .4s ease, transform .4s ease; }
-    .nav-overlay.open .nav-overlay__link{ opacity:1; transform:none; }
-    .nav-overlay.open .nav-overlay__link:nth-child(1){transition-delay:.05s}
-    .nav-overlay.open .nav-overlay__link:nth-child(2){transition-delay:.10s}
-    .nav-overlay.open .nav-overlay__link:nth-child(3){transition-delay:.15s}
-    .nav-overlay.open .nav-overlay__link:nth-child(4){transition-delay:.20s}
-    .nav-overlay__link:hover{color:var(--accent)}
-    .nav-overlay__footer{ position:absolute; bottom:38px; font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted-2); }
-
-    /* ── Buttons ── */
-    .btn{ display:inline-flex; align-items:center; justify-content:center; padding:14px 22px; border-radius:999px; border:1px solid rgba(255,255,255,.16); transition:.25s ease; font-size:11px; letter-spacing:.20em; text-transform:uppercase; white-space:nowrap; }
-    .btn-primary{ background:rgba(255,255,255,.95); color:#0b0d11; }
-    .btn-primary:hover{ background:#fff; transform:translateY(-1px); }
 
     /* ── Page hero ── */
     .page-hero{ padding:84px 0 42px; background:linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0)); }
@@ -144,7 +114,6 @@
 
     /* ── Footer ── */
     .site-footer{ padding:38px 0 54px; border-top:1px solid var(--line-soft); }
-    .site-footer__inner{ display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; color:var(--muted-2); font-size:11px; letter-spacing:.22em; text-transform:uppercase; }
 
     /* ── Image positions ── */
     .img-40ocean   { object-position:85% 48% }
@@ -163,10 +132,6 @@
     .img-18cornell { object-position:50% 46% }
     .img-56brite   { object-position:50% 46% }
 
-    /* ── Scroll reveal ── */
-    .reveal{ opacity:0; transform:translateY(24px); transition:opacity .75s ease, transform .75s ease; }
-    .reveal.revealed{ opacity:1; transform:none; }
-
     /* ── Responsive ── */
     @media (max-width:1020px){
       .project,.project:nth-child(even){ grid-template-columns:1fr }
@@ -182,6 +147,8 @@
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
     <a class="nav-overlay__link" href="/">Home</a>
@@ -209,7 +176,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="page-hero">
       <div class="container">
@@ -234,7 +201,7 @@
         <!-- 40 Ocean Ave -->
         <article class="project project--active reveal">
           <div class="project__media">
-            <img src="assets/img/40Ocean.jpg" alt="40 Ocean Avenue — Dutch Colonial estate in Larchmont Manor" class="img-40ocean" loading="lazy" width="800" height="580">
+            <img src="assets/img/40Ocean.jpg" alt="40 Ocean Avenue — Dutch Colonial estate in Larchmont Manor" class="img-40ocean" loading="lazy" width="1024" height="563">
           </div>
           <div class="project__body">
             <p class="eyebrow">In Progress · Expected 2026</p>
@@ -289,14 +256,14 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/7Walnut.jpg" alt="7 Walnut Avenue — Coastal Colonial in Larchmont Manor" class="img-7walnut" loading="lazy" width="800" height="580">
+            <img src="assets/img/7Walnut.jpg" alt="7 Walnut Avenue — Coastal Colonial in Larchmont Manor" class="img-7walnut" loading="lazy" width="1024" height="563">
           </div>
         </article>
 
         <!-- 5 Walnut Ave -->
         <article class="project project--active reveal">
           <div class="project__media">
-            <img src="assets/img/5Walnut.jpg" alt="5 Walnut Avenue — Coastal Colonial in Larchmont Manor" class="img-5walnut" loading="lazy" width="800" height="580">
+            <img src="assets/img/5Walnut.jpg" alt="5 Walnut Avenue — Coastal Colonial in Larchmont Manor" class="img-5walnut" loading="lazy" width="1024" height="563">
           </div>
           <div class="project__body">
             <p class="eyebrow">In Progress · Expected 2026</p>
@@ -352,7 +319,7 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/87Carthage.jpg" alt="87 Carthage Road — Modern Transitional in Scarsdale Heathcote" class="img-87carthage" loading="lazy" width="800" height="580">
+            <img src="assets/img/87Carthage.jpg" alt="87 Carthage Road — Modern Transitional in Scarsdale Heathcote" class="img-87carthage" loading="lazy" width="1024" height="768">
           </div>
         </article>
 
@@ -370,7 +337,7 @@
         <!-- 41 Wildwood 2025 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/41Wildwood.jpg" alt="41 Wildwood Road — Traditional Colonial in Scarsdale Quaker Ridge" class="img-41wildwood" loading="lazy" width="800" height="580">
+            <img src="assets/img/41Wildwood.jpg" alt="41 Wildwood Road — Traditional Colonial in Scarsdale Quaker Ridge" class="img-41wildwood" loading="lazy" width="1024" height="575">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2025</p>
@@ -426,14 +393,14 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/9Ogden.jpg" alt="9 Ogden Road — Modern Transitional in Scarsdale Fox Meadow" class="img-9ogden" loading="lazy" width="800" height="580">
+            <img src="assets/img/9Ogden.jpg" alt="9 Ogden Road — Modern Transitional in Scarsdale Fox Meadow" class="img-9ogden" loading="lazy" width="1024" height="682">
           </div>
         </article>
 
         <!-- 2 Cooper 2024 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/cooper2.jpg" alt="2 Cooper Road — Traditional Colonial estate in Scarsdale Murray Hill" class="img-cooper2" loading="lazy" width="800" height="580">
+            <img src="assets/img/cooper2.jpg" alt="2 Cooper Road — Traditional Colonial estate in Scarsdale Murray Hill" class="img-cooper2" loading="lazy" width="1024" height="597">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2024</p>
@@ -487,7 +454,7 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/spier.jpg" alt="85 Spier Road — Transitional Colonial in Scarsdale" class="img-spier" loading="lazy" width="800" height="580">
+            <img src="assets/img/spier.jpg" alt="85 Spier Road — Transitional Colonial in Scarsdale" class="img-spier" loading="lazy" width="1024" height="682">
           </div>
         </article>
 
@@ -522,7 +489,7 @@
         <!-- 17 Oxford 2021 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/oxford.jpg" alt="17 Oxford Road — Contemporary Colonial estate in Scarsdale Grange" class="img-oxford" loading="lazy" width="800" height="580">
+            <img src="assets/img/oxford.jpg" alt="17 Oxford Road — Contemporary Colonial estate in Scarsdale Grange" class="img-oxford" loading="lazy" width="1024" height="682">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2021</p>
@@ -565,7 +532,7 @@
             </div>
             <p class="project__copy">
               On one of Scarsdale's premier addresses, this 9,490 sq ft residence balances formal Colonial architecture
-              with a contemporary interior sensibility. SubZero and Wolf appliance suite including dual wall ovens,
+              with a contemporary interior sensibility. Sub-Zero and Wolf appliance suite including dual wall ovens,
               10-foot first-floor ceilings, and a fully resolved lower level with gym, recreation area, and bedroom suite.
             </p>
             <div class="project__tags">
@@ -575,14 +542,14 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/cooper23.jpg" alt="23 Cooper Road — Traditional Colonial in Scarsdale" class="img-cooper23" loading="lazy" width="800" height="580">
+            <img src="assets/img/cooper23.jpg" alt="23 Cooper Road — Traditional Colonial in Scarsdale" class="img-cooper23" loading="lazy" width="1024" height="682">
           </div>
         </article>
 
         <!-- 21 Griffen 2019 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/Griffen21.jpg" alt="21 Griffen Ave — Stone Colonial in Scarsdale with Long Island Sound views" class="img-griffen21" loading="lazy" width="800" height="580">
+            <img src="assets/img/Griffen21.jpg" alt="21 Griffen Ave — Stone Colonial in Scarsdale with Long Island Sound views" class="img-griffen21" loading="lazy" width="1024" height="682">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2019</p>
@@ -635,14 +602,14 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/Griffen19.jpg" alt="19 Griffen Ave — Contemporary Colonial in Scarsdale" class="img-griffen19" loading="lazy" width="800" height="580">
+            <img src="assets/img/Griffen19.jpg" alt="19 Griffen Ave — Contemporary Colonial in Scarsdale" class="img-griffen19" loading="lazy" width="936" height="768">
           </div>
         </article>
 
         <!-- 20 Cornell 2017 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/20Cornell.jpg" alt="20 Cornell Street — French Colonial in Scarsdale" class="img-20cornell" loading="lazy" width="800" height="580">
+            <img src="assets/img/20Cornell.jpg" alt="20 Cornell Street — French Colonial in Scarsdale" class="img-20cornell" loading="lazy" width="1024" height="681">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2017</p>
@@ -695,14 +662,14 @@
             </div>
           </div>
           <div class="project__media">
-            <img src="assets/img/18Cornell.jpg" alt="18 Cornell Street — Traditional Colonial in Scarsdale" class="img-18cornell" loading="lazy" width="800" height="580">
+            <img src="assets/img/18Cornell.jpg" alt="18 Cornell Street — Traditional Colonial in Scarsdale" class="img-18cornell" loading="lazy" width="1024" height="682">
           </div>
         </article>
 
         <!-- 56 Brite 2015 -->
         <article class="project reveal">
           <div class="project__media">
-            <img src="assets/img/56Brite.jpg" alt="56 Brite Avenue — Contemporary Colonial in Scarsdale Fox Meadow" class="img-56brite" loading="lazy" width="800" height="580">
+            <img src="assets/img/56Brite.jpg" alt="56 Brite Avenue — Contemporary Colonial in Scarsdale Fox Meadow" class="img-56brite" loading="lazy" width="1024" height="682">
           </div>
           <div class="project__body">
             <p class="eyebrow">Completed 2015</p>
@@ -748,7 +715,7 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <span>© 2025 Eilon Amidor Homes</span>
+      <span>© 2026 Eilon Amidor Homes</span>
       <span>Scarsdale · Larchmont Manor · Rye · Westchester County</span>
     </div>
   </footer>

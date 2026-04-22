@@ -3,254 +3,391 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eilon Amidor Homes | Coming Soon</title>
-  <meta name="description" content="Eilon Amidor Homes — Bespoke luxury residences in Westchester County. A new digital presence is coming soon." />
-  <meta name="robots" content="index,follow" />
 
-  <meta property="og:title" content="Eilon Amidor Homes | Coming Soon" />
-  <meta property="og:description" content="Bespoke luxury residences in Westchester County. Coming soon." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
-  <meta property="og:url" content="https://www.eilonamidorhomes.com/" />
-
+  <title>Luxury New Construction Homes Scarsdale, Larchmont & Westchester County NY | Eilon Amidor Homes</title>
+  <meta name="description" content="Eilon Amidor Homes builds bespoke luxury new construction homes across Westchester County NY — Scarsdale, Larchmont Manor, Rye, and surrounding areas. Custom estates, 20+ years. Private inquiry welcome." />
   <link rel="canonical" href="https://www.eilonamidorhomes.com/" />
-
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="US-NY" />
+  <meta name="geo.placename" content="Westchester County, New York" />
+  <meta property="og:title" content="Luxury New Construction Homes Scarsdale, Larchmont & Westchester County | Eilon Amidor Homes" />
+  <meta property="og:description" content="Bespoke luxury new construction homes across Westchester County — Scarsdale, Larchmont Manor, Rye, and surrounding areas. Premier custom home builder Eilon Amidor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.eilonamidorhomes.com/" />
+  <meta property="og:image" content="https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["RealEstateAgent", "LocalBusiness"],
+        "@id": "https://www.eilonamidorhomes.com/#business",
+        "name": "Eilon Amidor Homes",
+        "description": "Premier luxury new construction home builder across Westchester County, NY — specializing in Scarsdale, Larchmont Manor, Rye, and surrounding communities. Custom single-family estates with 20+ years of experience.",
+        "url": "https://www.eilonamidorhomes.com",
+        "image": "https://www.eilonamidorhomes.com/assets/img/hero-twilight.jpg",
+        "areaServed": [
+          {"@type": "City", "name": "Scarsdale", "addressRegion": "NY"},
+          {"@type": "City", "name": "Larchmont", "addressRegion": "NY"},
+          {"@type": "City", "name": "Rye", "addressRegion": "NY"},
+          {"@type": "AdministrativeArea", "name": "Westchester County", "addressRegion": "NY"}
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Scarsdale",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Eilon Amidor",
+          "jobTitle": "Luxury Home Builder & Developer"
+        },
+        "knowsAbout": [
+          "Luxury New Construction Homes",
+          "Custom Home Building Westchester County",
+          "New Construction Scarsdale NY",
+          "New Homes Larchmont Manor NY",
+          "New Construction Rye NY",
+          "Estate Development Westchester"
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307080b'/><text x='50%' y='54%' font-family='Georgia,serif' font-size='13' fill='%23c9a56a' text-anchor='middle' dominant-baseline='middle' letter-spacing='1'>EA</text></svg>">
+  <link rel="preload" as="image" href="assets/img/hero-twilight.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
   <style>
-    :root{
-      --bg:#090b10;
-      --fg:#f4f0e8;
-      --muted:rgba(244,240,232,.78);
-      --line:rgba(255,255,255,.18);
-      --gold:#d8b277;
-      --overlay-top:rgba(6,8,14,.28);
-      --overlay-bottom:rgba(6,8,14,.68);
-    }
+    html{scroll-behavior:smooth}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font-family:'Inter',sans-serif;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
+    /* Header (page-specific: overlay-on-hero on index) */
+    .site-header{ position:fixed; inset:0 0 auto 0; z-index:30; padding:26px 0; border-bottom:1px solid transparent; transition:background .35s ease, padding .35s ease, border-color .35s ease; }
+    .site-header.scrolled{ background:rgba(7,8,11,.94); backdrop-filter:blur(10px); padding:18px 0; border-color:var(--line-soft); }
+    .site-header__inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand__name{ letter-spacing:.01em; }
 
-    .hero{
-      position:relative;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      isolation:isolate;
-      background:
-        linear-gradient(180deg,var(--overlay-top) 0%, var(--overlay-bottom) 100%),
-        url("assets/img/hero-twilight.jpg") center center / cover no-repeat;
-    }
+    /* Buttons (page-specific overrides) */
+    .btn-primary{ box-shadow:0 14px 34px rgba(0,0,0,.28); }
+    .btn-secondary{ color:#fff; background:rgba(0,0,0,.18); backdrop-filter:blur(8px); }
+    .btn-secondary:hover{ background:rgba(255,255,255,.07); transform:translateY(-1px); }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,.04), transparent 38%),
-        linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.25));
-      z-index:0;
-      pointer-events:none;
-    }
+    /* Hero */
+    .hero{ position:relative; min-height:100vh; display:flex; align-items:flex-end; overflow:hidden; background: linear-gradient(180deg, rgba(5,7,12,.20) 0%, rgba(5,7,12,.46) 48%, rgba(5,7,12,.78) 100%), url("assets/img/hero-twilight.jpg") center center / cover no-repeat; isolation:isolate; }
+    .hero::before{ content:""; position:absolute; inset:0; background: radial-gradient(circle at 24% 24%, rgba(255,255,255,.08), transparent 28%), linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.28)); z-index:0; pointer-events:none; }
+    .hero__content{ position:relative; z-index:2; width:min(900px, 100%); padding:150px 0 72px; }
+    .hero__title{ font-family:'Cormorant Garamond',serif; font-size:clamp(52px, 8vw, 92px); line-height:.92; font-weight:600; letter-spacing:.01em; margin:0 0 12px; max-width:780px; }
+    .hero__subtitle{ margin:0 0 26px; font-size:12px; letter-spacing:.36em; text-transform:uppercase; color:var(--accent); }
+    .hero__headline{ font-family:'Cormorant Garamond',serif; font-size:clamp(28px, 3.8vw, 50px); line-height:1.06; font-weight:500; margin:0 0 18px; max-width:820px; }
+    .hero__copy{ margin:0 0 34px; max-width:650px; color:var(--muted); font-size:17px; line-height:1.9; }
+    .hero__actions{ display:flex; gap:14px; flex-wrap:wrap; }
+    .hero__scroll{ position:absolute; right:0; bottom:76px; z-index:2; color:rgba(241,237,230,.62); font-size:11px; letter-spacing:.28em; text-transform:uppercase; transform:rotate(90deg) translateY(-14px); transform-origin:right bottom; }
 
-    .wrap{
-      position:relative;
-      z-index:1;
-      width:min(900px, calc(100% - 48px));
-      text-align:center;
-      padding:48px 24px;
-    }
+    /* Sections */
+    .section{ padding:110px 0; }
+    .section--border{ border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0)); }
+    .intro{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:start; }
+    .intro__title{ font-family:'Cormorant Garamond',serif; font-size:clamp(30px, 3.8vw, 50px); line-height:1.08; margin:0; max-width:720px; }
+    .intro__copy{ color:var(--muted); font-size:17px; line-height:1.95; max-width:620px; }
 
-    .eyebrow{
-      margin:0 0 18px;
-      font-size:12px;
-      letter-spacing:.34em;
-      text-transform:uppercase;
-      color:rgba(244,240,232,.88);
-    }
+    /* Credentials bar */
+    .credentials{ padding:72px 0; border-bottom:1px solid var(--line-soft); }
+    .credentials__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+    .credential{ background:rgba(255,255,255,.02); padding:36px 32px; display:flex; flex-direction:column; gap:8px; }
+    .credential__value{ font-family:'Cormorant Garamond',serif; font-size:clamp(36px,3.5vw,50px); line-height:1; color:var(--text); }
+    .credential__value sup{ font-size:.5em; vertical-align:super; }
+    .credential__label{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); line-height:1.6; }
 
-    .brand{
-      margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(44px, 8vw, 92px);
-      line-height:.95;
-      letter-spacing:.01em;
-      font-weight:600;
-      text-shadow:0 10px 40px rgba(0,0,0,.35);
-    }
+    /* Portfolio grid */
+    .portfolio{ display:grid; grid-template-columns:repeat(2, 1fr); gap:28px; }
+    .portfolio-card{ position:relative; min-height:520px; overflow:hidden; border-radius:var(--radius); border:1px solid var(--line); background:var(--panel); box-shadow:var(--shadow); display:block; }
+    .portfolio-card img{ width:100%; height:100%; object-fit:cover; transition:transform .65s ease; }
+    .portfolio-card:hover img{ transform:scale(1.03); }
+    .portfolio-card__overlay{ position:absolute; inset:0; display:flex; align-items:flex-end; padding:28px; background:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.78)); }
+    .portfolio-card__kicker{ font-size:10px; letter-spacing:.30em; text-transform:uppercase; color:rgba(255,255,255,.76); margin:0 0 8px; }
+    .portfolio-card__title{ font-family:'Cormorant Garamond',serif; font-size:28px; line-height:1; margin:0 0 6px; }
+    .portfolio-card__meta{ color:rgba(255,255,255,.78); font-size:13px; line-height:1.6; margin:0; }
 
-    .subbrand{
-      margin:8px 0 0;
-      font-size:12px;
-      letter-spacing:.38em;
-      text-transform:uppercase;
-      color:var(--gold);
-    }
+    /* Builder section */
+    .builder{ display:grid; grid-template-columns:.85fr 1.15fr; gap:50px; align-items:start; }
+    .builder__title{ font-family:'Cormorant Garamond',serif; font-size:clamp(32px, 4vw, 52px); line-height:1.06; margin:0; max-width:520px; }
+    .builder__panel{ border:1px solid var(--line); background:rgba(255,255,255,.02); border-radius:var(--radius); padding:36px 34px; }
+    .builder__copy{ color:var(--muted); font-size:16px; line-height:1.95; margin:0 0 24px; }
+    .builder__list{ display:grid; gap:16px; margin-top:28px; }
+    .builder__item{ padding-top:16px; border-top:1px solid rgba(255,255,255,.08); font-size:15px; color:rgba(241,237,230,.88); line-height:1.7; }
 
-    .divider{
-      width:86px;
-      height:1px;
-      margin:28px auto 28px;
-      background:linear-gradient(90deg, transparent, var(--line), transparent);
-    }
+    /* CTA */
+    .cta{ padding:130px 0; text-align:center; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); }
+    .cta__title{ font-family:'Cormorant Garamond',serif; font-size:clamp(34px, 4vw, 58px); line-height:1.06; margin:0 0 14px; }
+    .cta__copy{ max-width:700px; margin:0 auto 28px; color:var(--muted); font-size:16px; line-height:1.9; }
 
-    .headline{
-      margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(30px, 4vw, 54px);
-      line-height:1.03;
-      font-weight:500;
-      text-shadow:0 10px 30px rgba(0,0,0,.28);
-    }
+    /* Footer */
+    .site-footer{ padding:38px 0 54px; }
 
-    .copy{
-      width:min(760px, 100%);
-      margin:22px auto 0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-    }
+    /* Image positions */
+    .img-oxford   { object-position:60% 46% }
+    .img-cooper2  { object-position:25% 44% }
+    .img-griffen  { object-position:60% 42% }
+    .img-spier    { object-position:10% 45% }
+    .img-cooper23 { object-position:10% 44% }
+    .img-40ocean  { object-position:85% 48% }
 
-    .meta{
-      margin:30px auto 0;
-      font-size:12px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:rgba(244,240,232,.84);
-    }
+    /* Scroll reveal delays */
+    .reveal-delay-1{ transition-delay:.10s }
+    .reveal-delay-2{ transition-delay:.20s }
+    .reveal-delay-3{ transition-delay:.30s }
+    .reveal-delay-4{ transition-delay:.40s }
 
-    .actions{
-      margin-top:34px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
+    /* Responsive */
+    @media (max-width:1100px){
+      .intro,.builder{ grid-template-columns:1fr }
+      .portfolio{ grid-template-columns:1fr }
+      .credentials__grid{ grid-template-columns:repeat(2,1fr) }
     }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:220px;
-      padding:15px 24px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      text-decoration:none;
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      transition:.25s ease;
-      backdrop-filter:blur(8px);
+    @media (max-width:760px){
+      .container{ width:min(100%, calc(100% - 28px)) }
+      .nav{ display:none } .nav-toggle{ display:flex }
+      .hero__content{ padding:130px 0 64px }
+      .hero__actions{ flex-direction:column; align-items:stretch }
+      .btn{ width:100% } .hero__scroll{ display:none }
+      .portfolio-card{ min-height:380px }
     }
-
-    .btn-primary{
-      background:rgba(255,255,255,.92);
-      color:#0a0c11;
-    }
-
-    .btn-primary:hover{
-      background:#fff;
-      transform:translateY(-1px);
-    }
-
-    .btn-secondary{
-      background:rgba(12,14,20,.18);
-      color:var(--fg);
-    }
-
-    .btn-secondary:hover{
-      background:rgba(12,14,20,.3);
-      transform:translateY(-1px);
-    }
-
-    .footer-note{
-      margin-top:32px;
-      font-size:13px;
-      color:rgba(244,240,232,.68);
-    }
-
-    .bottom-bar{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:1;
-      display:flex;
-      justify-content:center;
-      padding:18px 24px 22px;
-      background:linear-gradient(180deg, transparent, rgba(0,0,0,.28));
-    }
-
-    .bottom-bar__inner{
-      width:min(1100px, 100%);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      color:rgba(244,240,232,.72);
-      font-size:11px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-    }
-
-    @media (max-width: 700px){
-      .wrap{padding:36px 10px 90px}
-      .copy{font-size:15px; line-height:1.7}
-      .btn{min-width:100%}
-      .bottom-bar__inner{
-        flex-direction:column;
-        text-align:center;
-        gap:8px;
-      }
+    @media (max-width:480px){
+      .credentials__grid{ grid-template-columns:1fr }
     }
   </style>
 </head>
 <body>
-  <main class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Luxury Development • Westchester County</p>
 
-      <h1 class="brand">Eilon Amidor</h1>
-      <p class="subbrand">Homes</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="divider"></div>
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a class="nav-overlay__link" href="/">Home</a>
+    <a class="nav-overlay__link" href="portfolio.html">Portfolio</a>
+    <a class="nav-overlay__link" href="builder.html">The Builder</a>
+    <a class="nav-overlay__link" href="inquire.html">Inquiry</a>
+    <div class="nav-overlay__footer">Scarsdale · Larchmont · Westchester</div>
+  </div>
 
-      <h2 class="headline">A New Digital Presence<br>Is Coming Soon</h2>
-
-      <p class="copy">
-        For more than 20 years, Eilon Amidor has redefined luxury living in Westchester County through
-        bespoke estate development, timeless architecture, and an unwavering commitment to craftsmanship.
-        A new online presence is now underway.
-      </p>
-
-      <p class="meta">Scarsdale • Larchmont • Westchester County</p>
-
-      <div class="actions">
-        <a class="btn btn-primary" href="inquire.html">Inquire Privately</a>
-        <a class="btn btn-secondary" href="https://www.instagram.com/eilonamidorhomes/" target="_blank" rel="noopener">@EilonAmidorHomes</a>
-      </div>
-
-      <p class="footer-note">Selected works and full portfolio launching soon.</p>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a href="/" class="brand" aria-label="Eilon Amidor Homes Home">
+        <span class="brand__name">Eilon Amidor</span>
+        <span class="brand__sub">Homes</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#portfolio">Portfolio</a>
+        <a href="portfolio.html">All Projects</a>
+        <a href="builder.html">The Builder</a>
+        <a href="inquire.html">Inquiry</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navOverlay">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <div class="bottom-bar">
-      <div class="bottom-bar__inner">
-        <span>Bespoke Luxury Residences</span>
-        <span>eilonamidor.com • eilonamidorhomes.com</span>
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <p class="eyebrow">New Construction · Scarsdale · Larchmont Manor · Rye · Westchester County</p>
+          <h1 class="hero__title">Eilon Amidor</h1>
+          <p class="hero__subtitle">Homes</p>
+          <h2 class="hero__headline">Bespoke Residences of Enduring Distinction</h2>
+          <p class="hero__copy">
+            Westchester County's premier luxury new construction builder. Custom single-family estates
+            across Scarsdale, Larchmont Manor, Rye, and surrounding communities — defined by architectural
+            restraint, refined craftsmanship, and a standard of finish aligned with the most discerning clientele.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+            <a class="btn btn-secondary" href="inquire.html">Inquire Privately</a>
+          </div>
+        </div>
+        <div class="hero__scroll">Scroll</div>
       </div>
-    </div>
+    </section>
+
+    <section class="section section--border">
+      <div class="container intro reveal">
+        <div>
+          <p class="eyebrow">Why Eilon Amidor Homes</p>
+          <h2 class="intro__title">Luxury new construction homes across Westchester County — composed with judgment, built with discipline, and meant to endure.</h2>
+        </div>
+        <div>
+          <p class="intro__copy">
+            Eilon Amidor Homes creates custom luxury residences throughout Westchester County — primarily in
+            Scarsdale, Larchmont Manor, and Rye — for clients who value permanence, proportion, and an elevated
+            standard of finish. Each new construction project is approached as a complete work of design, in which
+            architectural integrity, modern livability, and construction quality are held to the same exacting standard.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials">
+      <div class="container reveal">
+        <div class="credentials__grid">
+          <div class="credential">
+            <div class="credential__value">20<sup>+</sup></div>
+            <div class="credential__label">Years in Westchester County</div>
+          </div>
+          <div class="credential">
+            <div class="credential__value" style="font-size:clamp(14px,1.6vw,22px); line-height:1.3; padding-top:6px;">Scarsdale · Larchmont<br>Rye &amp; Beyond</div>
+            <div class="credential__label">Westchester County, New York</div>
+          </div>
+          <div class="credential">
+            <div class="credential__value">$5M<sup>+</sup></div>
+            <div class="credential__label">Luxury Tier — Westchester County</div>
+          </div>
+          <div class="credential">
+            <div class="credential__value" style="font-size:clamp(18px,2vw,26px); line-height:1.2; padding-top:4px;">Miguel<br>Sostre</div>
+            <div class="credential__label">Architecture — Design Partnership</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--border" id="portfolio">
+      <div class="container">
+        <div class="intro reveal" style="margin-bottom:42px;">
+          <div>
+            <p class="eyebrow">Selected Residences — Scarsdale, Larchmont Manor &amp; Westchester County</p>
+            <h2 class="intro__title">Custom Luxury Homes Built Across Westchester County</h2>
+          </div>
+          <div>
+            <p class="intro__copy">
+              From new construction estates in Scarsdale and Rye to coastal colonial homes in Larchmont Manor —
+              each residence is custom in the truest sense: substantial without excess, elevated without performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio">
+          <a class="portfolio-card reveal reveal-delay-1" href="portfolio.html">
+            <img src="assets/img/40Ocean.jpg" alt="40 Ocean Avenue new construction luxury home Larchmont Manor NY — Dutch Colonial 9500 sq ft" class="img-40ocean" loading="lazy" width="1024" height="563">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">In Progress 2026 · 9,500 sq ft</p>
+                <h3 class="portfolio-card__title">40 Ocean Ave</h3>
+                <p class="portfolio-card__meta">Larchmont Manor · 7 BD · 0.85 Acres · Elevator</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card reveal reveal-delay-2" href="portfolio.html">
+            <img src="assets/img/cooper2.jpg" alt="2 Cooper Road new construction luxury home Scarsdale NY — Traditional Colonial 10600 sq ft" class="img-cooper2" loading="lazy" width="1024" height="597">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed 2024 · 10,600 sq ft</p>
+                <h3 class="portfolio-card__title">2 Cooper Road</h3>
+                <p class="portfolio-card__meta">Scarsdale · 7 BD · 1.2 Acres · Pool</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card reveal reveal-delay-3" href="portfolio.html">
+            <img src="assets/img/oxford.jpg" alt="17 Oxford Road luxury new construction home Scarsdale NY — Contemporary Colonial 9200 sq ft" class="img-oxford" loading="lazy" width="1024" height="682">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed 2021 · 9,200 sq ft</p>
+                <h3 class="portfolio-card__title">17 Oxford Road</h3>
+                <p class="portfolio-card__meta">Scarsdale · 7 BD · 1.2 Acres · Pool &amp; Cabana</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card reveal reveal-delay-4" href="portfolio.html">
+            <img src="assets/img/Griffen21.jpg" alt="21 Griffen Avenue new construction home Scarsdale NY — Stone Colonial 9850 sq ft Long Island Sound views" class="img-griffen" loading="lazy" width="1024" height="682">
+            <div class="portfolio-card__overlay">
+              <div>
+                <p class="portfolio-card__kicker">Completed 2019 · 9,850 sq ft</p>
+                <h3 class="portfolio-card__title">21 Griffen Ave</h3>
+                <p class="portfolio-card__meta">Scarsdale · 8 BD · 1.6 Acres · LI Sound Views</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="builder">
+      <div class="container builder reveal">
+        <div>
+          <p class="eyebrow">The Builder</p>
+          <h2 class="builder__title">A Disciplined Approach to Luxury Development</h2>
+        </div>
+        <div class="builder__panel">
+          <p class="builder__copy">
+            For more than 20 years, Eilon Amidor has developed luxury residences throughout Westchester County,
+            establishing a reputation built on architectural integrity, meticulous craftsmanship, and a standard
+            of finish that defines the upper tier of the market.
+          </p>
+          <p class="builder__copy">
+            Eilon works in close collaboration with architect Miguel Sostre, whose portfolio of luxury residences
+            across Westchester has established him as one of the region's most respected designers. Together,
+            they approach each residence as a complete work — from massing and exterior character to the final interior detail.
+          </p>
+          <div class="builder__list">
+            <div class="builder__item">Custom single-family estates shaped by timeless architecture and modern livability</div>
+            <div class="builder__item">A detail-driven construction process with an emphasis on finish quality and architectural integrity</div>
+            <div class="builder__item">A discreet, highly controlled experience suited to the expectations of the ultra-luxury market</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div class="container">
+        <p class="eyebrow">Private Access</p>
+        <h2 class="cta__title">Engage the Brand Privately</h2>
+        <p class="cta__copy">
+          Portfolio details, current opportunities, and future development conversations are shared discreetly.
+          All inquiries are handled with care and confidentiality.
+        </p>
+        <a class="btn btn-primary" href="inquire.html">Submit Inquiry</a>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Eilon Amidor Homes</span>
+      <span>Scarsdale · Larchmont Manor · Rye · Westchester County</span>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    function updateHeader(){ header.classList.toggle('scrolled', window.scrollY > 60); }
+    window.addEventListener('scroll', updateHeader, { passive:true });
+    updateHeader();
+
+    const toggle = document.getElementById('navToggle');
+    const overlay = document.getElementById('navOverlay');
+    toggle.addEventListener('click', () => {
+      const isOpen = overlay.classList.toggle('open');
+      toggle.classList.toggle('active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    overlay.querySelectorAll('.nav-overlay__link').forEach(link => {
+      link.addEventListener('click', () => {
+        overlay.classList.remove('open'); toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('revealed'); revealObserver.unobserve(e.target); } });
+    }, { threshold:0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>

@@ -101,7 +101,7 @@
     .project{ display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:stretch; margin-bottom:34px; }
     .project:nth-child(even){ grid-template-columns:.95fr 1.05fr; }
     .project__media{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--panel); min-height:580px; box-shadow:var(--shadow); }
-    .project__media img{ width:100%; height:100%; object-fit:cover; }
+    .project__media img{ width:100%; height:100%; object-fit:contain; }
     .project__body{ border-radius:var(--radius); border:1px solid var(--line); background:rgba(255,255,255,.02); padding:40px 36px; display:flex; flex-direction:column; justify-content:center; }
 
     /* In-progress variant — subtle gold border */
@@ -140,31 +140,6 @@
 
     /* ── Footer ── */
     .site-footer{ padding:38px 0 54px; border-top:1px solid var(--line-soft); }
-
-    /* ── Image positions ── */
-    .img-40ocean   { object-position:85% 48% }
-    .img-7walnut   { object-position:80% 46% }
-    .img-5walnut   { object-position:50% 48% }
-    .img-87carthage{ object-position:50% 46% }
-    .img-41wildwood{ object-position:50% 48% }
-    .img-9ogden    { object-position:68% 44% }
-    .img-cooper2   { object-position:22% 44% }
-    .img-spier     { object-position:10% 45% }
-    .img-oxford    { object-position:60% 46% }
-    .img-cooper23  { object-position:13% 44% }
-    .img-griffen21 { object-position:55% 42% }
-    .img-griffen19 { object-position:55% 40% }
-    .img-20cornell { object-position:50% 44% }
-    .img-18cornell { object-position:50% 46% }
-    .img-56brite   { object-position:50% 46% }
-    .img-21stratton { object-position:62% 46% }
-    .img-34spring,
-    .img-99central,
-    .img-70brewster,
-    .img-40bradford { object-position:68% 46% }
-    .project__media img.img-17highland,
-    .project__media img.img-54drake { object-fit:contain; background:#0b0c0f; }
-    .img-20lebanon  { object-position:50% 40% }
 
     /* ── Responsive ── */
     @media (max-width:1020px){
